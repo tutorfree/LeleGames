@@ -3,4 +3,4 @@ Um garoto autista que teve a embalagem do seu suco favorito mudado pelo fabrican
 até a fábrica principal para tentar conseguir a embalagem antiga, pois sua rigidez cognitiva
 diz que, mesmo essa pequena mudança, são produtos distintos.
 
-Ele lutará contra os macotes da indústria até chegar ao coração do grande problema.
+Ele lutará contra os mascotes da indústria até chegar ao coração do grande problema.
