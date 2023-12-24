@@ -1,0 +1,5 @@
+Um garoto autista que teve a embalagem do seu suco favorito mudado pelo fabricante, tenta ir
+até a fábrica principal para tentar conseguir a embalagem antiga, pois sua rigidez cognitiva
+diz que, mesmo essa pequena mudança, são coisas distintas e difícil de aceitar.
+
+Ele lutará contra os macotes da indústria até chegar ao coração do grande problema.
