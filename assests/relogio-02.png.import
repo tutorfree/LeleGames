@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/relogio-02.png-655e152db3ee3d50e58b1a2621579bf3.stex"
+path="res://.import/relogio-02.png-a8872b201731ccea5e8a82f749d6c98f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/relogio-02.png"
-dest_files=[ "res://.import/relogio-02.png-655e152db3ee3d50e58b1a2621579bf3.stex" ]
+source_file="res://fonts/relogio-02.png"
+dest_files=[ "res://.import/relogio-02.png-a8872b201731ccea5e8a82f749d6c98f.stex" ]
 
 [params]
 
