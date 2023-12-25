@@ -1,0 +1,187 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/map01.png" type="Texture" id=1]
+[ext_resource path="res://sounds/intro.mp3" type="AudioStream" id=2]
+[ext_resource path="res://fonts/segoeprb.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/player.png" type="Texture" id=4]
+[ext_resource path="res://scripts/botaoPlay.gd" type="Script" id=5]
+[ext_resource path="res://assets/botao02.png" type="Texture" id=6]
+[ext_resource path="res://scripts/ButtonQuit.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("cenario2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1028, -6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cenario:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5, -6 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("cenario2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1028, -6 ), Vector2( -8.00024, -6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cenario:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -5, -6 ), Vector2( -1041, -6 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -198, 271 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "entradaPlayer"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -198, 271 ), Vector2( 502, 271 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="telaInicial" type="Node2D"]
+
+[node name="cenario" type="Sprite" parent="."]
+position = Vector2( -5, -6 )
+scale = Vector2( 0.866946, 2.04682 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="cenario2" type="Sprite" parent="."]
+position = Vector2( 1028, -6 )
+scale = Vector2( 0.866946, 2.04682 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "move"
+playback_speed = 0.5
+anims/RESET = SubResource( 1 )
+anims/move = SubResource( 2 )
+
+[node name="player" type="Sprite" parent="."]
+position = Vector2( -198, 271 )
+texture = ExtResource( 4 )
+
+[node name="animnPlayer" type="AnimationPlayer" parent="."]
+autoplay = "entradaPlayer"
+anims/RESET = SubResource( 3 )
+anims/entradaPlayer = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -9.204
+autoplay = true
+
+[node name="Button" type="Button" parent="." groups=["botaoPlay"]]
+margin_left = 322.0
+margin_top = 461.0
+margin_right = 481.0
+margin_bottom = 531.0
+flat = true
+script = ExtResource( 5 )
+
+[node name="startButton" type="Sprite" parent="Button" groups=["botaoPlay"]]
+position = Vector2( 79.2987, 34.875 )
+scale = Vector2( 0.25361, 0.25361 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Button"]
+margin_left = 22.0
+margin_top = 14.0
+margin_right = 134.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 5 )
+text = "JOGAR"
+align = 1
+valign = 1
+
+[node name="ButtonQuit" type="Button" parent="." groups=["quit"]]
+margin_left = 520.0
+margin_top = 459.0
+margin_right = 675.0
+margin_bottom = 528.0
+rect_pivot_offset = Vector2( -76, -31 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="quit" type="Sprite" parent="ButtonQuit"]
+position = Vector2( 78, 36 )
+scale = Vector2( 0.254, 0.254 )
+texture = ExtResource( 6 )
+
+[node name="sair" type="Label" parent="ButtonQuit"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 139.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 6 )
+text = "SAIR"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="ButtonQuit" to="ButtonQuit" method="_on_ButtonQuit_pressed"]
